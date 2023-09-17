@@ -31,7 +31,6 @@ theme:
         - navigation.top
         - search.highlight
         - search.share
-    custom_dir: "docs/overrides"
     font:
         text: Google Sans
         code: Regular
@@ -51,7 +50,7 @@ plugins:
           allow_errors: false
           ignore: ["conf.py"]
           execute_ignore: ["*ignore.ipynb"]
-          
+
 markdown_extensions:
     - admonition
     - abbr
