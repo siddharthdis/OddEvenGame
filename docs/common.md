@@ -1,3 +1,3 @@
 # common module
 
-::: oddevengame.common
+### oddevengame.common
