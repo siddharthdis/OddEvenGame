@@ -51,7 +51,7 @@ plugins:
           allow_errors: false
           ignore: ["conf.py"]
           execute_ignore: ["*ignore.ipynb"]
-          
+
 markdown_extensions:
     - admonition
     - abbr
@@ -82,5 +82,5 @@ nav:
     - Examples:
         - examples/intro.ipynb
     - API Reference:
-          - oddevengame module: oddevengame.md
+          - OddEvenGame module: OddEvenGame.md
           - common module: common.md

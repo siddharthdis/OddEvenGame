@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""Tests for `oddevengame` package."""
+"""Tests for `OddEvenGame` package."""
 
 
 import unittest

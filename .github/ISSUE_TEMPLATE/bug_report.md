@@ -8,7 +8,7 @@ labels: bug
 
 ### Environment Information
 
--   oddevengame version:
+-   OddEvenGame version:
 -   Python version:
 -   Operating System:
 

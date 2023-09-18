@@ -3,5 +3,5 @@
 To use OddEvenGame in a project:
 
 ```
-import oddevengame
+import OddEvenGame
 ```

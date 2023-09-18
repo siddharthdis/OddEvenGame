@@ -1,4 +1,4 @@
- 
-# oddevengame module
 
-::: oddevengame.oddevengame
+# OddEvenGame module
+
+::: OddEvenGame.OddEvenGame

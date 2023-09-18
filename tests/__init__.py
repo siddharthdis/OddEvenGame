@@ -1,1 +1,1 @@
-"""Unit test package for oddevengame."""
+"""Unit test package for OddEvenGame."""
