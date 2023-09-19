@@ -14,4 +14,3 @@
 ## Features
 
 -   TODO
-- Siddharth Yadav
