@@ -1,4 +1,0 @@
-
-# OddEvenGame module
-
-::: OddEvenGame.OddEvenGame
