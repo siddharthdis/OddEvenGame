@@ -50,6 +50,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/siddharthdis/OddEvenGame',
-    version='0.0.12',
+    version='0.0.14',
     zip_safe=False,
 )
