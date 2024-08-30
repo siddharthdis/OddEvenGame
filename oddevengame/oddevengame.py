@@ -1,71 +1,69 @@
 def start():
     import random
 
-    def __init__():
-        print("This is Odd eve game")
+    def initialize_game():
+        print("This is Odd Eve game")
 
     def toss():
         print("Choose Odd or Even for toss")
-        user_choice = (input()).casefold()
-
+        user_choice = input().casefold()
+        
         if user_choice == "odd":
-            print("You choose Odd, so I choose even.")
+            print("You chose Odd, so I choose even.")
         elif user_choice == "even" or user_choice == "eve":
-            print("You choose even, so I choose odd")
+            print("You chose even, so I choose odd")
         else:
-            print("hello you were given two options and you choose to mess it up, well congrats! \nBye!")
+            print("You were given two options and you chose to mess it up, well congrats! \nBye!")
             quit()
-
-        print("Now Type any number from 1 to 10 (well ok how it goes so just do it :/ )")
+        
+        print("Now type any number from 1 to 10")
         Done = False
         while not Done:
             try:
                 toss_inp = int(input())
                 if toss_inp <= 0 or toss_inp >= 11:
-                    print("Maybe try again with a number within the given range?")
+                    print("Try again with a number within the given range?")
                 else:
                     Done = True
-            except:
-                print("maybe try again with an actual number?")
+            except ValueError:
+                print("Try again with an actual number?")
 
+        toss_comp_imp = random.randint(1, 10)
 
-
-        toss_comp_imp = random.randint(1,10)
-
-        if (toss_comp_imp+toss_inp)%2 == 0:
+        if (toss_comp_imp + toss_inp) % 2 == 0:
             if user_choice == "even" or user_choice == "eve":
-                print("Well, ", toss_inp, " + ", toss_comp_imp , " is ", (toss_comp_imp+toss_inp), " Which is even, So You win :)")
+                print(f"Well, {toss_inp} + {toss_comp_imp} is {(toss_comp_imp + toss_inp)}, which is even. So, you win :)")
                 player_toss_win()
             else:
-                print("Well, ", toss_inp, " + ", toss_comp_imp , " is ", (toss_comp_imp+toss_inp), " Which is even, So I win :)")
+                print(f"Well, {toss_inp} + {toss_comp_imp} is {(toss_comp_imp + toss_inp)}, which is even. So, I win :)")
                 computer_toss_win()
         else:
             if user_choice == "odd":
-                print("Well, ", toss_inp, " + ", toss_comp_imp , " is ", (toss_comp_imp+toss_inp), " Which is odd, So You win :)")
+                print(f"Well, {toss_inp} + {toss_comp_imp} is {(toss_comp_imp + toss_inp)}, which is odd. So, you win :)")
                 player_toss_win()
             else:
-                print("Well, ", toss_inp, " + ", toss_comp_imp , " is ", (toss_comp_imp+toss_inp), " Which is odd, So I win :)")
+                print(f"Well, {toss_inp} + {toss_comp_imp} is {(toss_comp_imp + toss_inp)}, which is odd. So, I win :)")
                 computer_toss_win()
 
     def player_toss_win():
         print("What do you choose? Batting or Balling?")
         Done = False
         while not Done:
-            plr_choice = (input()).casefold()
+            plr_choice = input().casefold()
             if "bat" in plr_choice or "batting" in plr_choice:
-                print("You Choose batting... I see...")
+                print("You chose batting... I see...")
                 Done = True
             elif "ball" in plr_choice or "balling" in plr_choice:
-                print("You Choose Balling... I see...")
+                print("You chose Balling... I see...")
                 Done = True
             else:
-                print("OK, Try again... \nBatting Or Balling?")
+                print("Try again... \nBatting or Balling?")
         DaGame(plr_choice)
 
     def computer_toss_win():
-        Options = ["batting","balling"]
+        Options = ["batting", "balling"]
         choice = random.choice(Options)
-        print("I choose ", choice)
+        print(f"I choose {choice}")
         if choice == "batting":
             DaGame("balling")
         else:
@@ -73,18 +71,18 @@ def start():
 
     def DaGame(choice):
         if "bat" in choice:
-            print("Its your Batting, Type any number within Range 1-10")
+            print("It's your batting. Type any number within range 1-10")
             out = False
             score = 0
             while not out:
                 try:
                     inp = int(input())
                     if inp <= 0 or inp >= 11:
-                        print("Maybe try again with a number within the given range?")
+                        print("Try again with a number within the given range?")
                     else:
-                        cmp_imp = random.randint(1,10)
-                        print("You choose ", inp, " and I choose ", cmp_imp)
-                        if inp-cmp_imp == 1 or cmp_imp-inp == 1 or (cmp_imp == 1 and inp == 10) or (inp == 1 and cmp_imp== 10):
+                        cmp_imp = random.randint(1, 10)
+                        print(f"You chose {inp} and I chose {cmp_imp}")
+                        if abs(inp - cmp_imp) == 1 or (cmp_imp == 1 and inp == 10) or (inp == 1 and cmp_imp == 10):
                             print("OUT!")
                             out = True
                         elif inp == cmp_imp:
@@ -92,24 +90,24 @@ def start():
                             score += inp * cmp_imp
                         else:
                             score += inp
-                        print("Total score = ", score)
-                except:
-                    print("maybe try again with an actual number?")
+                        print(f"Total score = {score}")
+                except ValueError:
+                    print("Try again with an actual number?")
 
-            print("Your score was ", score,"\n\n")
+            print(f"Your score was {score}\n\n")
+            print("It's my batting now\n")
 
-            print("Its my batting now\n")
             out = False
             cmpscore = 0
             while not out:
                 try:
                     inp = int(input())
                     if inp <= 0 or inp >= 11:
-                        print("Maybe try again with a number within the given range?")
+                        print("Try again with a number within the given range?")
                     else:
-                        cmp_imp = random.randint(1,10)
-                        print("You choose ", inp, " and I choose ", cmp_imp)
-                        if inp-cmp_imp == 1 or cmp_imp-inp == 1 or (cmp_imp == 1 and inp == 10) or (inp == 1 and cmp_imp== 10):
+                        cmp_imp = random.randint(1, 10)
+                        print(f"You chose {inp} and I chose {cmp_imp}")
+                        if abs(inp - cmp_imp) == 1 or (cmp_imp == 1 and inp == 10) or (inp == 1 and cmp_imp == 10):
                             print("OUT!")
                             out = True
                         elif inp == cmp_imp:
@@ -117,30 +115,37 @@ def start():
                             cmpscore += inp * cmp_imp
                         else:
                             cmpscore += cmp_imp
-                        print("Total score = ", cmpscore)
-                except:
-                    print("maybe try again with an actual number?")
+                        print(f"Total score = {cmpscore}")
 
-            print("My score was ", cmpscore, "and your score was ", score, "!\n")
-            if score>cmpscore:
+                        
+                        if cmpscore > score:
+                            print("I surpassed your score! YOU LOSE!!!\n", "L" * 100)
+                            return  
+
+                except ValueError:
+                    print("Try again with an actual number?")
+
+            print(f"My score was {cmpscore} and your score was {score}!\n")
+            if score > cmpscore:
                 print("YOU WIN!!!\n")
-            elif score<cmpscore:
-                print("YOU LOSE!!!\n")
+            elif score < cmpscore:
+                print("YOU LOSE!!!\n", "L" * 100)
             else:
                 print("Tie :/")
-        if "ball" in choice:
-            print("Its my batting now\n")
+
+        elif "ball" in choice:
+            print("It's my batting now\n")
             out = False
             cmpscore = 0
             while not out:
                 try:
                     inp = int(input())
                     if inp <= 0 or inp >= 11:
-                        print("Maybe try again with a number within the given range?")
+                        print("Try again with a number within the given range?")
                     else:
-                        cmp_imp = random.randint(1,10)
-                        print("You choose ", inp, " and I choose ", cmp_imp)
-                        if inp-cmp_imp == 1 or cmp_imp-inp == 1 or (cmp_imp == 1 and inp == 10) or (inp == 1 and cmp_imp== 10):
+                        cmp_imp = random.randint(1, 10)
+                        print(f"You chose {inp} and I chose {cmp_imp}")
+                        if abs(inp - cmp_imp) == 1 or (cmp_imp == 1 and inp == 10) or (inp == 1 and cmp_imp == 10):
                             print("OUT!")
                             out = True
                         elif inp == cmp_imp:
@@ -148,12 +153,12 @@ def start():
                             cmpscore += inp * cmp_imp
                         else:
                             cmpscore += cmp_imp
-                        print("Total score = ", cmpscore)
-                except:
-                    print("maybe try again with an actual number?")
+                        print(f"Total score = {cmpscore}")
+                except ValueError:
+                    print("Try again with an actual number?")
 
-            print("My score was ", cmpscore, '\n\n')
-            print("Its your batting now\n")
+            print(f"My score was {cmpscore}\n\n")
+            print("It's your batting now\n")
 
             out = False
             score = 0
@@ -161,11 +166,11 @@ def start():
                 try:
                     inp = int(input())
                     if inp <= 0 or inp >= 11:
-                        print("Maybe try again with a number within the given range?")
+                        print("Try again with a number within the given range?")
                     else:
-                        cmp_imp = random.randint(1,10)
-                        print("You choose ", inp, " and I choose ", cmp_imp)
-                        if inp-cmp_imp == 1 or cmp_imp-inp == 1 or (cmp_imp == 1 and inp == 10) or (inp == 1 and cmp_imp== 10):
+                        cmp_imp = random.randint(1, 10)
+                        print(f"You chose {inp} and I chose {cmp_imp}")
+                        if abs(inp - cmp_imp) == 1 or (cmp_imp == 1 and inp == 10) or (inp == 1 and cmp_imp == 10):
                             print("OUT!")
                             out = True
                         elif inp == cmp_imp:
@@ -173,20 +178,37 @@ def start():
                             score += inp * cmp_imp
                         else:
                             score += inp
-                        print("Total score = ", score)
-                except:
-                    print("maybe try again with an actual number?")
+                        print(f"Total score = {score}")
+                        if score > cmpscore:
+                            print("You surpassed my score! YOU WIN!!!\nGG")
+                            return  
 
-            print("My score was ", cmpscore, "and your score was ", score, "!\n")
-            if score>cmpscore:
+                except ValueError:
+                    print("Try again with an actual number?")
+
+            print(f"My score was {cmpscore} and your score was {score}!\n")
+            if score > cmpscore:
                 print("YOU WIN!!!\nGG")
-            elif score<cmpscore:
-                print("YOU LOSE!!!\n", "L"*100)
+            elif score < cmpscore:
+                print("YOU LOSE!!!\n", "L" * 100)
             else:
                 print("Tie :/")
 
+    def play_game():
+        initialize_game()
+        while True:
+            toss()
+            while True:  
+                print("Do you want to play again? (yes/no)")
+                replay = input().strip().lower()  
+                if replay == "yes" or replay == "y":
+                    break  
+                elif replay == "no" or replay == "n":
+                    print("Thanks for playing! Goodbye!")
+                    return  
+                else:
+                    print("Invalid input. Please type 'yes' or 'no'.")
 
 
-    __init__()
-    toss()
+    play_game() 
 
